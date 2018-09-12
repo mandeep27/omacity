@@ -1,0 +1,971 @@
+/*--------------------------------------------
+Common
+--------------------------------------------*/
+
+.btm_header {
+    background: #fff;
+    width: 100%;
+    padding: 18px 0;
+}
+
+header {
+    width: 100%;
+    z-index: 99;
+    background: #fff;
+    position: $positionRelative;
+    .search_form {
+        position: $positionRelative;
+        width: 307px;
+        height: 57px;
+        .form_control {
+            @include border-radius(2px);
+            font-size: 14px;
+            height: 100%;
+            width: 100%;
+            position: $positionRelative;
+            border: 1px solid #a9a9a9;
+            vertical-align: top;
+            padding: 0 16px 0 40px;
+            &:focus {
+                border-color: #922525;
+            }
+        }
+             
+        
+        .fa-search.srch {
+            color: #a9a9a9;
+            font-size: 18px;
+            position: $positionAbsolute;
+            left: 15px;
+            @include position-center;
+            margin-top: -1px;
+        }
+        & button {
+            background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+            position: absolute;
+            left: 10px;
+            top: 19px;
+            z-index: 1;
+            border: 0;
+            cursor: pointer;
+            height: 23px;
+            width: 28px;
+            &:hover,
+            &:focus {
+                opacity: 0.8;
+            }
+        }
+    }
+    .navbar {
+        padding: 0;
+        .navbar-brand {
+            margin: 0 21px 0 0;
+            padding: 0;
+            width: 239px;
+        }
+        .navbar-nav {
+            li {
+                margin-left: 40px;
+                position: relative;
+                a {
+                    display: inline-block;
+                    vertical-align: middle;
+                    padding: 0!important;
+                    color: #474747;
+                    font-size: 18px;
+                    font-weight: 400;
+                    letter-spacing: 1px;
+                    position: $positionRelative;
+                    z-index: 1;
+                    font-family: $bentsonBook;
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: $positionAbsolute;
+                        z-index: -1;
+                        left: -10px;
+                        top: 0;
+                        height: 0px;
+                        right: -10px;
+                        @include box-shadow(inset 0 40px #922525);
+                        @include transition(all 0.5s ease 0s);
+                    }
+                    &:hover,
+                    &:focus {
+                        color: #fff;
+                        &:after {
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.business_btn {
+    margin-left: 40px;
+    .list_business {
+        overflow: hidden;
+        font-size: 18px;
+        color: #ffffff;
+        background: $backgroundDrkBlck;
+        display: inline-block;
+        padding: 15px;
+        width: 210px;
+        text-align: center;
+        @include border-radius(5px);
+        position: $positionRelative;
+        @include transform(perspective(1px) translateZ(0));
+        @include box-shadow(0 0 1px #000);
+        @include transition(all 0.3s ease 0s);
+        -webkit-transition-property: color;
+        transition-property: color;
+        &:before {
+            content: "";
+            position: $positionAbsolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: $backgroundHovr;
+            -webkit-transform: scale(0);
+            transform: scale(0);
+            -webkit-transition-property: transform;
+            transition-property: transform;
+            @include transition(all 0.3s ease 0s);
+            -webkit-transition-timing-function: ease-out;
+            transition-timing-function: ease-out;
+        }
+        &:hover,
+        &:focus {
+            color: #fff;
+            &:before {
+                webkit-transform: scale(1);
+                transform: scale(1);
+            }
+        }
+        &:hover {
+            color: #fff;
+        }
+    }
+    
+}
+
+.banner {
+    height: 791px;
+    width: 100%;
+    position: $positionRelative;
+    .carousel-indicators .active {
+        background: $backgroundHovr;
+    }
+    .carousel {
+        height: 100%;
+        width: 100%;
+        .carousel-inner {
+            height: 100%;
+        }
+    }
+    .carousel-item {
+        background-size: $backgroundSize;
+        background-repeat: $backgroundRepeat;
+        background-position: $backgroundPosition;
+        height: 100%;
+        &:before {
+            background: rgba(0, 0, 0, 0.1);
+            width: 100%;
+            height: 100%;
+            left: $left0;
+            top: $top0;
+            content: '';
+            position: $positionAbsolute;
+        }
+    }
+}
+
+.banner_caption {
+    width: 100%;
+    position: $positionAbsolute;
+    left: $left0;
+    top: $top0;
+    height: 100%;
+    text-align: center;
+    .banner_caption_main {
+        @include flexbox;
+        height: 100%;
+        @include justify-content(center);
+        @include align-items(center);
+        width: 100%;
+        .banner_innr {
+            width: 61%;
+            h1 {
+                font-size: 41px;
+                color: #fff;
+                text-transform: $textUpper;
+                font-family: $bentsonBlack;
+                display: block;
+                margin-bottom: 8px;
+            }
+            h4 {
+                font-size: 25px;
+                color: #fff;
+                line-height: 24px;
+                display: block;
+                line-height: 1.4;
+            }
+            form {
+                margin-top: 47px;
+                .form-group {
+                    width: 42%;
+                    display: inline;
+                    float: left;
+                    margin-right: 1%;
+                    select {
+                        cursor: pointer;
+                    }
+                }
+                .form_control {
+                    /* background: rgba(255, 255, 255, 0.75);
+                    height: 72px;
+                    @include border-radius(4px);*/
+                    width: 100%;
+                    border: 0;
+                    padding: 0;
+                }
+                .slct {
+                    position: $positionRelative;
+                    .bootstrap-select {
+                        button {
+                            background: rgba(255, 255, 255, 0.75);
+                            padding: 0 21px;
+                            cursor: pointer;
+                            height: 71px;
+                            font-family: $bentsonBook;
+                            @include border-radius(4px);
+                            font-size: 18px;
+                            &:focus,
+                            &:hover {
+                                outline: none !important;
+                                box-shadow: none;
+                            }
+                        }
+                        .dropdown-toggle::after {
+                            @include position-center;
+                            right: 37px;
+                            content: '\f107';
+                            font-family: 'FontAwesome';
+                            font-size: 28px;
+                            color: $colorGry;
+                            line-height: normal;
+                            z-index: 1;
+                            border: 0;
+                            height: auto;
+                            margin: 0;
+                            padding: 0;
+                        }
+                    }
+                    .dropdown-menu {
+                        max-height: 410px !important;
+                        overflow-y: auto !important;
+                        padding: 0;
+                        border-radius: 0;
+                        .inner {
+                            height: 100%;
+                        }
+                        li {
+                            background: rgba(255, 255, 255, 0.75);
+                            padding: 14px 21px;
+                            color: #fff;
+                            border-bottom: 2px solid #ccc;
+                            font-size: 16px;
+                            @include transition(all 0.5s ease);
+                            a {
+                                display: block;
+                            }
+                            &:hover,
+                            &:focus {
+                                color: #fff;
+                                background: $backgroundBrwn;
+                                a {
+                                    color: inherit;
+                                }
+                            }
+                        }
+                    }
+                    .dropdown-menu.open ul {
+                        display: block !important;
+                    }
+                    .show {
+                        .dropdown-toggle::after {
+                            content: '\f106';
+                        }
+                    }
+                }
+                .slct.slct1 {
+                    .dropdown-toggle::after {
+                        background: url(../images/map.svg)no-repeat;
+                        width: 20px;
+                        height: 20px;
+                        content: '';
+                        right: 21px;
+                    }
+                }
+            }
+        }
+    }
+    .search_bx {
+        position: $positionRelative;
+        display: inline;
+        position: relative;
+        width: 14%;
+        float: left;
+    }
+    .banner_srch_main {
+        margin-top: 34px;
+        float: left;
+        width: 100%;
+        .banner_srch {
+            background: rgba(0, 0, 0, 0.6);
+            @include border-radius(4px);
+            padding: 10px 30px;
+            width: 90%;
+            float: none;
+            display: inline-block;
+            text-align: left;
+            label {
+                font-size: 18px;
+                color: #fff;
+                font-family: $bentsonBlack;
+                text-transform: $textUpper;
+                letter-spacing: 1px;
+                margin-bottom: 0;
+                margin-right: 27px;
+                display: inline-block;
+                line-height: 31px;
+            }
+            ul {
+                width: 74%;
+                display: inline-block;
+                vertical-align: middle;
+                li {
+                    list-style: none;
+                    display: inline-block;
+                    vertical-align: middle;
+                    font-size: 18px;
+                    color: #fff;
+                    font-family: $bentsonBook;
+                    margin-right: 39px;
+                    a {
+                        color: #fff;
+                        &:hover,
+                        &:focus {
+                            color: #ccc;
+                        }
+                    }
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.srch_btn {
+    font-size: 18px;
+    text-transform: $textUpper;
+    color: #fff;
+    font-family: $bentsonBook;
+    font-weight: normal;
+    background: $backgroundGry;
+    border: 0;
+    display: inline-block;
+    @include border-radius(4px);
+    width: 100%;
+    cursor: pointer;
+    padding: 22px;
+    letter-spacing: 1px;
+    &:hover,
+    &:focus {
+        background: $backgroundHovr;
+        color: #fff;
+    }
+}
+
+
+/**** Home Inspired ****/
+
+.inspired_sec {
+    background: $backgroundLightGry;
+    width: 100%;
+    padding: 88px 0;
+    .get_inspire {
+        .inspire_main {
+            margin-top: 50px;
+            .inspire_bx {
+                width: 31.73%;
+                position: $positionRelative;
+                float: none;
+                margin-right: 2%;
+                display: inline-block;
+                margin-bottom: 1.35%;
+                overflow: hidden;
+                figure {
+                    height: 257px;
+                    background-size: $backgroundSize;
+                    background-position: $backgroundPosition;
+                    margin-bottom: 0;
+                    @include transition(all 7s);
+                    overflow: hidden;
+                    @include transform(scale(1));
+                    &:hover {
+                        @include transform(scale(1.2));
+                    }
+                }
+                &:nth-child(3n) {
+                    margin-right: 0;
+                }
+                .fig_caption {
+                    position: $positionAbsolute;
+                    bottom: $bottom0;
+                    background: rgba(0, 0, 0, 0.5);
+                    padding: 8px 15px;
+                    width: 100%;
+                    @include transition(all 0.3s ease-in-out);
+                    .fig_caption_txt {
+                        width: 76%;
+                        display: inline-block;
+                        vertical-align: middle;
+                        h5 {
+                            font-size: 18px;
+                            color: #ffffff;
+                            text-transform: $textUpper;
+                            font-family: $railway;
+                            font-weight: 400;
+                        }
+                        h6 {
+                            font-family: $railway;
+                            font-weight: 400;
+                            color: #fff;
+                            font-size: 11px;
+                            text-transform: $textCapt;
+                            margin-top: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .featured_sec {
+        .featured_main {
+            margin-top: 50px;
+            .featured_bx {
+                background: $backgroundWhite;
+                padding: 15px;
+                @include box-shadow(0px 0 6px -2px #000);
+                margin-bottom: 12px;
+                figure {
+                    width: 120px;
+                    margin: 0 15px 0 0;
+                    display: inline-block;
+                    vertical-align: top;
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+                .featured_bx_txt {
+                    display: inline-block;
+                    width: 66%;
+                    vertical-align: top;
+                    h5 {
+                        font-size: 20px;
+                        font-family: $railway;
+                        font-weight: 600;
+                        color: #272727;
+                        margin-bottom: 5px;
+                        a {
+                            color: #272727;
+                            &:hover,
+                            &:focus {
+                                color: #a91616;
+                            }
+                        }
+                    }
+                    p {
+                        font-size: 15px;
+                        font-family: $railway;
+                        font-weight: 400;
+                        line-height: 24px;
+                        color: #272727;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.view_btn {
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    font-family: $railway;
+    border: 1px solid #ffffff;
+    background: transparent;
+    width: 60px;
+    display: inline-block;
+    text-align: center;
+    padding: 5px 3px 3px;
+    vertical-align: middle;
+    &:hover,
+    &:focus {
+        color: #000;
+        background: $backgroundWhite;
+    }
+}
+
+h2 {
+    font-size: 36px;
+    color: #474747;
+    font-family: $bentsonBlack;
+    text-transform: $textUpper;
+    line-height: 43px;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 16px;
+    color: #272727;
+    line-height: 33px;
+    font-family: $bentsonBook;
+}
+
+
+/**** Home How Works ****/
+
+.how_wrk_sec {
+    padding: 65px 0;
+    background: $backgroundWhite;
+    text-align: center;
+    figure {
+        width: 25%;
+        display: inline-block;
+        margin: 0;
+        vertical-align: middle;
+        margin-right: 7%;
+    }
+    .how_wrk_rght {
+        text-align: left;
+        width: 31%;
+        display: inline-block;
+        vertical-align: middle;
+        h3 {
+            font-size: 36px;
+            color: #4f5052;
+            text-transform: $textUpper;
+            font-family: $bentsonBook;
+            line-height: 43px;
+            margin-top: 38px;
+            margin-bottom: 26px;
+        }
+        p {
+            font-size: 17px;
+            color: #4f5052;
+            font-family: $bentsonBook;
+            line-height: 33px;
+        }
+    }
+}
+
+
+/**** Home About ****/
+
+.home_abt {
+    padding: 67px 0;
+    background: $backgroundDarkGry;
+    text-align: center;
+    .home_abt_info {
+        width: 75%;
+        margin: auto;
+        h2 {
+            margin-bottom: 34px;
+        }
+        p {
+            color: #4f5052;
+            font-size: 17px;
+        }
+    }
+}
+
+
+/**** Home Blog Post ****/
+
+.home_blog {
+    background: $backgroundWhite;
+    padding: 70px 0;
+    text-align: center;
+    .home_blog_post {
+        margin-top: 50px;
+        text-align: left;
+        .home_blog_bx {
+            overflow: hidden;
+            .blog_figure {
+                height: 273px;
+                overflow: hidden;
+                margin-bottom: 25px;
+                figure {
+                    margin-bottom: 20px;
+                    @include transition(all 7s);
+                    overflow: hidden;
+                    background-size: $backgroundSize;
+                    background-repeat: $backgroundRepeat;
+                    background-position: $backgroundPosition;
+                    @include transform(scale(1));
+                    height: 273px;
+                }
+            }
+            &:hover figure {
+                @include transform(scale(1.2));
+            }
+            .home_blog_info {
+                h6 {
+                    font-size: 14px;
+                    color: #6f6f6f;
+                    font-family: $bentsonBook;
+                    margin-bottom: 10px;
+                }
+                h4 {
+                    font-size: 25px;
+                    color: #272727;
+                    font-family: $bentsonBook;
+                    margin-bottom: 15px;
+                    a {
+                        color: #272727;
+                        &:hover,
+                        &:focus {
+                            color: #a91616;
+                        }
+                    }
+                }
+                p {
+                    color: #272727;
+                    font-size: 16px;
+                }
+            }
+            &:hover h4 a {
+                color: #a91616;
+            }
+            &:hover .rd_more {
+                color: #a91616;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+.rd_more {
+    font-size: 15px;
+    color: #800000;
+    font-family: $bentsonBlack;
+    text-decoration: underline;
+    margin-top: 15px;
+    display: inline-block;
+    &:hover,
+    &:focus {
+        color: #a91616;
+        text-decoration: none;
+    }
+}
+
+
+/**** Home Testimonial ****/
+
+.home_testimonial {
+    background: $backgroundWhite;
+    padding: 70px 0;
+    text-align: center;
+    .home_testimonial_main {
+        .testimonial_innr {
+            margin-top: 60px;
+        }
+        figure {
+            width: 98px;
+            height: 98px;
+            @include border-radius(50%);
+            overflow: hidden;
+            margin: 0;
+            display: inline-block;
+            margin-bottom: 21px;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        h5 {
+            font-size: 20px;
+            font-family: $bentsonBlack;
+            color: #272727;
+            margin-top: 22px;
+        }
+        span {
+            font-size: 17px;
+            color: #272727;
+            font-family: $bentsonBook;
+        }
+    }
+}
+
+
+/**** Home Fobes Section ****/
+
+.fobes_slider {
+    background: $backgroundTintGry;
+    padding: 83px 0;
+    text-align: center;
+    #fobes_slider_sec {
+        margin: auto;
+        width: 52%;
+    }
+    .carousel-indicators {
+        bottom: auto;
+        top: 0;
+        position: static;
+        margin: 0 0 50px;
+        li {
+            text-indent: 0;
+            width: auto;
+            height: auto;
+            margin: 0;
+            background: transparent;
+            line-height: 48px;
+            margin-right: 98px;
+            opacity: 0.6;
+            cursor: pointer;
+            &.active {
+                opacity: 1;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+            img {
+                vertical-align: middle;
+            }
+        }
+    }
+    .carousel-item {
+        p {
+            color: #4f5052;
+            font-size: 20px;
+            font-family: $bentsonBook;
+        }
+    }
+}
+
+.btn_efct {
+    @include border-radius(5px);
+    position: $positionRelative;
+    @include transform(perspective(1px) translateZ(0));
+    @include box-shadow(0 0 1px #000);
+    @include transition(all 0.3s ease 0s);
+    -webkit-transition-property: color;
+    transition-property: color;
+    overflow: hidden;
+    cursor: pointer;
+    &:before {
+        content: "";
+        position: $positionAbsolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $backgroundHovr;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        @include transition(all 0.3s ease 0s);
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+    &:hover,
+    &:focus {
+        color: #fff;
+        .srch_btn {
+            z-index: 1;
+            position: relative;
+            background: transparent;
+        }
+        &:before {
+            webkit-transform: scale(1);
+            transform: scale(1);
+        }
+    }
+    &:hover {
+        color: #fff;
+    }
+}
+
+
+/**** Home Subscribe Section ****/
+
+.subscribe_sec {
+    padding: 60px 0;
+    .subscribe_form {
+        margin: auto;
+        text-align: center;
+        h2 {
+            font-family: $bentsonBook;
+            color: #000;
+            margin-right: 30px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        form {
+            display: inline-block;
+            width: 54%;
+            vertical-align: middle;
+            .form-group {
+                margin-bottom: 0;
+                width: 71.5%;
+                margin-right: 2%;
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+        .subscribe_btn {
+            width: 26%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
+}
+
+.form_control {
+    font-size: 18px;
+    color: #000;
+    font-family: $bentsonBook;
+    @include border-radius(2px);
+    border: 1px solid #eeeeee;
+    background: $backgroundSilver;
+    padding: 0 23px;
+    height: 71px;
+    width: 100%;
+    &:focus {
+        border-color: #800000;
+    }
+}
+
+
+/**** Footer Section ****/
+
+footer {
+    .top_ftr {
+        background: $backgroundGry;
+        padding: 78px 0;
+        .ftr_bx {
+            a {
+                display: block;
+                width: 331px;
+            }
+        }
+        .ftr_info {
+            h5 {
+                color: #fff;
+                font-size: 17px;
+                font-family: $bentsonBlack;
+                text-transform: $textUpper;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+            }
+            ul li {
+                list-style: none;
+                color: #fff;
+                font-size: 17px;
+                font-family: $bentsonBook;
+                letter-spacing: 1px;
+                margin-bottom: 5px;
+                &.current-menu-item {
+                    a {
+                        color: #adabab;
+                    }
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                a {
+                    color: inherit;
+                    &:hover,
+                    &:focus {
+                        color: #adabab;
+                    }
+                }
+            }
+        }
+        .ftr_social {
+            div {
+                display: inline-block;
+                &:hover,
+                &:focus {
+                    a {
+                        color: #adabab;
+                    }
+                }
+            }
+            figure {
+                width: 31px;
+                height: 31px;
+                border: 1px solid #fff;
+                @include border-radius(50%);
+                line-height: 31px;
+                text-align: center;
+                display: inline-block;
+                margin-right: 23px;
+                i {
+                    font-size: 16px;
+                }
+            }
+            a {
+                color: #fff;
+                font-size: 18px;
+                letter-spacing: 1px;
+                font-family: $bentsonBook;
+            }
+            
+        }
+    }
+    .copyright_sec {
+        background: $backgroundLightBlack;
+        padding: 23px 0;
+        .copyright_innr {
+            padding: 0 25px;
+            @include flexbox;
+            @include justify-content(space-between);
+            p {
+                color: #fff;
+                font-family: $bentsonBook;
+                font-size: 14px;
+                line-height: 24px;
+                a {
+                    color: #1cc8ed;
+                    &:hover,
+                    &:focus {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    
+    
+}
+
+
+@media (min-width:1500px) {
+    .container {
+        max-width: 1470px;
+    }
+}

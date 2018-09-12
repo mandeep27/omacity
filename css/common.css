@@ -1,0 +1,53 @@
+/*--------------------------------------------
+Common
+--------------------------------------------*/
+header {
+  width: 100%;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  z-index: 99;
+  background: #fff;
+  position: relative; }
+
+.btm_header {
+  background: #fff;
+  width: 100%;
+  padding: 9px 0; }
+
+header .navbar {
+  padding: 0; }
+
+header .navbar .navbar-brand {
+  margin: 0;
+  padding: 0;
+  width: 239px; }
+
+header .navbar .navbar-nav li {
+  margin-left: 43px;
+  position: relative; }
+
+header .navbar .navbar-nav li a {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 !important;
+  color: #474747;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1px; }
+
+header .navbar .navbar-nav li a:focus,
+header .navbar .navbar-nav li a:hover {
+  color: #ff9501; }
+
+header .navbar .navbar-nav li.current-menu-item a,
+header .navbar .navbar-nav li .dropdown-menu a.current-menu-item,
+header .navbar .navbar-nav li.current-menu-parent a {
+  color: #ff9501; }
+
+.list_business {
+  font-size: 18px;
+  color: #ffffff; }
+
+@media (min-width: 1500px) {
+  .container {
+    max-width: 1470px; } }
